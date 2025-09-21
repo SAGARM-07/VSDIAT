@@ -30,6 +30,7 @@ you can find the folder structure like
 step 2
 
 Inside the /verilog_files/ folder u can find the files of RTL code and their equivalent testbench codes 
+<img width="456" height="255" alt="Image" src="https://github.com/user-attachments/assets/e866e2f3-c540-4b40-b9ab-d6b62e5ae0a2" />
 
 source to the /verilog_files/ folder 
 
@@ -49,3 +50,27 @@ iverilog good_mux.v tb_good_mux.v
 ```
 
 </div>>
+
+an executable file a.out will be created at the same folder
+
+now execute the file using
+<div >
+
+```
+./a.out
+```
+
+<div >
+now a dumpfile tb_good_mux.vcd will be obtained
+
+use the code
+<div >
+
+```
+gtkwave tb_good_mux.vcd
+```
+
+<div >
+this code will generate a simulation output for the rtlcode and the testbench
+
+
