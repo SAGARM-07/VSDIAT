@@ -1,138 +1,131 @@
-##  WEEK-01
-# DAY-01
-____________________________________________________________________
-**LAB**
+## 📅 WEEK-01
 
-step 1
+# 🚀 DAY-01 – LAB
 
-Clone the repo in your local space
-<div >
+---
 
+### ✅ Step 1: Clone the Repository
+
+Clone the workshop repository to your local machine:
+
+```bash
+git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
 ```
-https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
-```
 
-</div>
+Switch to the root shell (if needed):
 
-Open the root shell in the terminal using
-<div >
-
-```
+```bash
 sudo -i
 ```
 
-</div>
+You’ll now see the folder structure similar to this:
 
-you can find the folder structure like
+![Folder Structure](https://github.com/user-attachments/assets/984d6039-147e-4b49-849e-c663524d1284)
 
-<img width="210" height="246" alt="Image" src="https://github.com/user-attachments/assets/984d6039-147e-4b49-849e-c663524d1284" />
+---
 
-step 2
+### ✅ Step 2: RTL Simulation Using Icarus Verilog
 
-Inside the /verilog_files/ folder u can find the files of RTL code and their equivalent testbench codes 
-<img width="456" height="255" alt="Image" src="https://github.com/user-attachments/assets/e866e2f3-c540-4b40-b9ab-d6b62e5ae0a2" />
+1. **Navigate** to the `/verilog_files/` directory where RTL and testbench files are stored.
 
-source to the /verilog_files/ folder 
+   ![Verilog Files](https://github.com/user-attachments/assets/e866e2f3-c540-4b40-b9ab-d6b62e5ae0a2)
 
-Time to run Icarus verilog
+2. **Compile** using Icarus Verilog:
 
-use the code
-<div >
-
-```
-https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
-```
-
-<div >
-
-```
+```bash
 iverilog good_mux.v tb_good_mux.v
 ```
 
-</div>>
+This will generate an executable file named:
 
-an executable file a.out will be created at the same folder
-
-<img width="456" height="255" alt="Image" src="https://github.com/user-attachments/assets/e866e2f3-c540-4b40-b9ab-d6b62e5ae0a2" />
-
-now execute the file using
-<div >
-
+```bash
+a.out
 ```
+
+3. **Run the Simulation**:
+
+```bash
 ./a.out
 ```
 
-<div >
-now a dumpfile tb_good_mux.vcd will be obtained
+This produces a waveform dump file:
 
-use the code
-<div >
-
+```bash
+tb_good_mux.vcd
 ```
+
+4. **View Waveform in GTKWave**:
+
+```bash
 gtkwave tb_good_mux.vcd
 ```
 
-<div >
-this code will generate a simulation output for the rtlcode and the testbench
+This opens the simulation output for both the RTL and testbench.
 
-<img width="59" height="20" alt="Image" src="https://github.com/user-attachments/assets/6bf6ba65-f376-4f9d-a969-3d4efa3c6635" />
+![GTKWave Example](https://github.com/user-attachments/assets/6bf6ba65-f376-4f9d-a969-3d4efa3c6635)
 
-step 3
+---
 
-open yosys using 
-<div >
+### ✅ Step 3: Logic Synthesis Using Yosys
 
-```
+1. **Start Yosys**:
+
+```bash
 yosys
 ```
 
-<div >
-add the liberty file obtained from cloning
-<div >
+2. **Read Liberty File** (from cloned repo):
 
-```
+```bash
 read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
 
-<div >
+3. **Read and Synthesize Verilog Code**:
 
-then add verilog code file /good_mux_v/
-<div >
-
-```
+```bash
 read_verilog good_mux.v
 synth -top good_mux
 ```
 
-<div >
-now the hierarchy of the design will be obtained
+You will now see the synthesized design hierarchy.
 
-<img width="369" height="223" alt="Image" src="https://github.com/user-attachments/assets/4f3e68aa-369f-44b6-8ea8-148fbb0700b3" />
+![Hierarchy Output](https://github.com/user-attachments/assets/4f3e68aa-369f-44b6-8ea8-148fbb0700b3)
 
-then use 
-<div >
+4. **Run ABC for Technology Mapping**:
 
-```
+```bash
 abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
 
-<div >
-here the ABC results will be shown
+ABC optimization results will appear:
 
-<img width="514" height="125" alt="Image" src="https://github.com/user-attachments/assets/7cdb1900-25ec-4956-89e4-b5da7c003cae" />
+![ABC Results](https://github.com/user-attachments/assets/7cdb1900-25ec-4956-89e4-b5da7c003cae)
 
-step 4
-to see the netlist 
+---
 
-use the command
+### ✅ Step 4: View the Netlist
 
-<div >
+To view the generated synthesized netlist in Yosys:
 
-```
+```bash
 show
 ```
 
-<div >
-then the netlist is generated
+This will bring up a graphical view of the gate-level netlist.
+
+---
+
+### 📌 Summary
+
+| Tool               | Purpose                      |
+| ------------------ | ---------------------------- |
+| **Icarus Verilog** | RTL compilation & simulation |
+| **GTKWave**        | View simulation waveform     |
+| **Yosys**          | RTL synthesis                |
+| **ABC**            | Technology mapping           |
+
+---
+
+
 
 
