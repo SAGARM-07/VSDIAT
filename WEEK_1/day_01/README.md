@@ -1,5 +1,117 @@
 ## 📅 WEEK-01
 
+# 🚀 DAY-01 – LEARNING
+---
+## 🛠️ **Icarus Verilog (iverilog)**
+
+- It's a **free tool** that lets you **simulate Verilog code**.
+- Think of it like a "Verilog compiler" — it checks your design and runs it to see how it behaves.
+- You write your Verilog code, compile it with `iverilog`, and run the output to test your circuit.
+
+```bash
+iverilog design.v testbench.v   # Compile
+./a.out                         # Run simulation
+```
+
+---
+
+## 🧪 **Design & Testbench**
+
+- **Design**: Your actual digital circuit written in Verilog (e.g., a multiplexer, adder, etc.).
+- **Testbench**: A separate Verilog file that **feeds inputs** to your design and **checks outputs**.
+
+### Simple Analogy:
+- Design = Washing machine
+- Testbench = Person pressing buttons and checking if clothes are clean
+
+---
+
+## 👀 **GTKWave**
+
+- A **waveform viewer**.
+- After simulation, you get a `.vcd` file (like a log of signal changes).
+- GTKWave shows how signals change over time — like a graph of your circuit’s behavior.
+
+```bash
+gtkwave simulation.vcd
+```
+
+---
+
+## ⚙️ **Yosys Commands**
+
+Yosys is a tool that **converts Verilog code into gates** (logic synthesis).
+
+### 🔹 `read_verilog`
+- Loads your Verilog file into Yosys.
+
+```yosys
+read_verilog design.v
+```
+
+### 🔹 `read_liberty`
+- Loads a `.lib` file — this contains info about the gates (like speed, power, etc.).
+
+```yosys
+read_liberty -lib path/to/library.lib
+```
+
+### 🔹 `synth`
+- Converts your Verilog design into a gate-level version using the library.
+
+```yosys
+synth -top design_name
+```
+
+---
+
+## 🔧 **Logic Synthesis**
+
+- It's the process of **turning your Verilog code into actual gates** (AND, OR, NOT, etc.).
+- The result is a **netlist** — a list of gates and how they’re connected.
+- This is what goes onto a chip!
+
+---
+
+## ⏱️ **Setup Time & Hold Time**
+
+These are **timing rules** for flip-flops (memory elements):
+
+### 🕒 Setup Time
+- Data must be **stable before** the clock edge.
+- If it's changing too close to the clock, the flip-flop might miss it.
+
+### 🕒 Hold Time
+- Data must stay **stable after** the clock edge.
+- If it changes too soon, the flip-flop might get confused.
+
+### Simple Diagram:
+```
+         |<-- Setup -->|<-- Hold -->|
+Data ----|============|============|---->
+         ↑            ↑            ↑
+       Clock Edge   Clock Edge   Clock Edge
+```
+
+> Violating these can cause **errors** or **unpredictable behavior** in your circuit.
+
+---
+
+## 🧠 Summary
+
+| Concept         | What It Means                                |
+|----------------|-----------------------------------------------|
+| Icarus Verilog | Simulates Verilog code                        |
+| Design         | Your digital circuit                          |
+| Testbench      | Feeds inputs and checks outputs               |
+| GTKWave        | Shows signal changes over time                |
+| Yosys          | Converts Verilog to gate-level netlist        |
+| Setup Time     | Data stable **before** clock edge             |
+| Hold Time      | Data stable **after** clock edge              |
+| Logic Synthesis| Turns code into real gates for chip design    |
+
+---
+
 # 🚀 DAY-01 – LAB
 
 ---
@@ -128,6 +240,10 @@ This will bring up a graphical view of the gate-level netlist.
 | **ABC**            | Technology mapping           |
 
 ---
+
+
+
+
 
 
 
