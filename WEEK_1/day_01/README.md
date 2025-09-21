@@ -37,6 +37,7 @@ gtkwave simulation.vcd
 ```
 
 ---
+<img width="1801" height="846" alt="Image" src="https://github.com/user-attachments/assets/6d8f207b-662d-400a-bd2e-4b7c35083840" />
 
 ## ⚙️ **Yosys Commands**
 
