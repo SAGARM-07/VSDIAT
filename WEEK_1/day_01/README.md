@@ -153,6 +153,8 @@ This will generate an executable file named:
 ```bash
 a.out
 ```
+![GTKWave Example](https://github.com/user-attachments/assets/6bf6ba65-f376-4f9d-a969-3d4efa3c6635)
+
 
 3. **Run the Simulation**:
 
@@ -174,7 +176,7 @@ gtkwave tb_good_mux.vcd
 
 This opens the simulation output for both the RTL and testbench.
 
-![GTKWave Example](https://github.com/user-attachments/assets/6bf6ba65-f376-4f9d-a969-3d4efa3c6635)
+<img width="998" height="638" alt="Image" src="https://github.com/user-attachments/assets/0e865acb-43c3-4713-b823-869ef110cdb4" />
 
 ---
 
