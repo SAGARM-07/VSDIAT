@@ -4,13 +4,24 @@ ____________________________________________________________________
 **LAB**
 
 step 1
-Open the root shell in the terminal using
-<div>
 
-  
-...
-  
-  sudo -i
-  
-...
+Clone the repo in your local space
+<div >
+
+```
+https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
+```
+
 </div>
+
+Open the root shell in the terminal using
+<div >
+
+```
+sudo -i
+```
+
+</div>
+
+you can find the folder structure like
+
