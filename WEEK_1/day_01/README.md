@@ -113,6 +113,9 @@ show
 
 This will bring up a graphical view of the gate-level netlist.
 
+<img width="1847" height="656" alt="Image" src="https://github.com/user-attachments/assets/7bbb65be-ddcc-4e92-a785-6f4fa602b1bb" />
+
+
 ---
 
 ### 📌 Summary
