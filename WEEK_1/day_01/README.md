@@ -107,6 +107,8 @@ synth -top good_mux
 <div >
 now the hierarchy of the design will be obtained
 
+<img width="369" height="223" alt="Image" src="https://github.com/user-attachments/assets/4f3e68aa-369f-44b6-8ea8-148fbb0700b3" />
+
 then use 
 <div >
 
@@ -116,6 +118,8 @@ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 
 <div >
 here the ABC results will be shown
+
+<img width="514" height="125" alt="Image" src="https://github.com/user-attachments/assets/7cdb1900-25ec-4956-89e4-b5da7c003cae" />
 
 step 4
 to see the netlist 
